@@ -23,7 +23,7 @@ imgs <- list.files("img", "*.jpg", full.names = TRUE) %>% map(~ readJPEG(.))
 # split the vector of images into "pages" (9 images per page)
 pages <- split(imgs, ceiling(seq_along(card_names) / 9))
 
-pdf("cards.pdf", height = 11.69, width = 8.27)
+pdf("cards.pdf", width = 2.5 * 3, height = 3.5 * 3)
 par(mai = rep(0,4), bg = "black")
 layout(matrix(1:9, ncol=3, byrow=TRUE))
 
